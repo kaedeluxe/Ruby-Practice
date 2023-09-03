@@ -1,15 +1,13 @@
-dictionary = %w[the big dog]
+# frozen_string_literal: true
+
+main_dictionary = %w[the big dog do]
 
 def substrings(string, dictionary)
-  output = []
-  string_array = string.split(' ')
-  string_array.each do |test|
-    dictionary.reduce(Hash.new(0)) do |dic, count|
-    # p  test.include?(dic)
-      dic[count] += 1
-    p  dic
-    end
-  end
+        dictionary.each_with_object(Hash.new(0)) do |word, acc|
+                
+                
+                # acc[word] += 1 if word.include?(string)
+        end
 end
 
-p substrings("theatrics of big", dictionary)
+p substrings('the doggo do', main_dictionary)
